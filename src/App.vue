@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header>
-      <a href="https://www.facebook.com/StudioNoClaims/" slot="logo">
+      <a slot="logo" href="https://www.facebook.com/StudioNoClaims/">
         <img src="https://scontent-waw1-1.xx.fbcdn.net/v/t1.0-1/p320x320/90767039_194232475335239_3092828644456792064_o.jpg?_nc_cat=105&_nc_sid=dbb9e7&_nc_ohc=HW3tomYTdBIAX9LPVzB&_nc_ht=scontent-waw1-1.xx&_nc_tp=6&oh=a4c89b96c726e1badc2c2ade6e153e2a&oe=5EC0979F">
       </a>
       <nav slot="navbar">
@@ -73,5 +73,8 @@ export default {
     padding: 5px;
     font-size: 16px;
     color: gold;
+  }
+  .router-link:hover {
+    color: #ffe100;
   }
 </style>

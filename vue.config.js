@@ -2,7 +2,7 @@ const path = require('path')
 const PrerenderSPAPlugin = require('prerender-spa-plugin')
 
 module.exports = {
-  publicPath: '/my-first-project/', //todo: configure githubpages
+  publicPath: '/sadey/', //todo: configure githubpages
   configureWebpack: {
     // plugins: [
     //   new PrerenderSPAPlugin({
