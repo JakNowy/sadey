@@ -2,13 +2,18 @@
     <section>
         <slot name="title"></slot>
         <slot name="subtitle"></slot>
-        <slot name="video"></slot>
-<!--        <video autoplay loop muted playsinline src="images/Banner.mp4"></video>-->
     </section>
 </template>
 
 <script>
     export default {
+        props: {
+            backgroundURL: {
+                type: String,
+                required: true,
+            }
+        },
+
         data () {
             return {
             }
@@ -17,7 +22,8 @@
 </script>
 
 <style>
-    section {
-        background: blue;
-    }
+  section {
+    height: 100vh;
+    background-size: cover;
+  }
 </style>

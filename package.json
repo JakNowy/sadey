@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "deploy": "git subtree push --prefix dist origin gh-pages"
   },
   "dependencies": {
     "@quasar/extras": "^1.0.0",
@@ -21,6 +22,7 @@
     "babel-plugin-transform-imports": "1.5.0",
     "postcss-rtl": "^1.2.3",
     "vue-cli-plugin-quasar": "~2.0.0",
+    "vue-particles": "^1.0.9",
     "vue-template-compiler": "^2.6.11"
   }
 }

@@ -1,8 +1,27 @@
 <template>
   <div>
-    <Header>
+    <vue-particles
+        :particleOpacity="0.7"
+        :particlesNumber="80"
+        shapeType="circle"
+        :particleSize="4"
+        linesColor="#dedede"
+        :linesWidth="1"
+        :lineLinked="true"
+        :lineOpacity="0.4"
+        :linesDistance="150"
+        :moveSpeed="3"
+        :hoverEffect="true"
+        hoverMode="grab"
+        :clickEffect="true"
+        clickMode="push"
+        color="#fff"
+        style="position:absolute; width: 100%; height: 100%"
+    ></vue-particles>
+
+    <Header style="padding: 0 50px 0 50px; border-bottom: gold 1px solid; background: black">
       <a slot="logo" href="https://www.facebook.com/StudioNoClaims/">
-        <img src="https://scontent-waw1-1.xx.fbcdn.net/v/t1.0-1/p320x320/90767039_194232475335239_3092828644456792064_o.jpg?_nc_cat=105&_nc_sid=dbb9e7&_nc_ohc=HW3tomYTdBIAX9LPVzB&_nc_ht=scontent-waw1-1.xx&_nc_tp=6&oh=a4c89b96c726e1badc2c2ade6e153e2a&oe=5EC0979F">
+        <img class="logo" src="https://scontent-waw1-1.xx.fbcdn.net/v/t1.0-1/p320x320/90767039_194232475335239_3092828644456792064_o.jpg?_nc_cat=105&_nc_sid=dbb9e7&_nc_ohc=HW3tomYTdBIAX9LPVzB&_nc_ht=scontent-waw1-1.xx&_nc_tp=6&oh=a4c89b96c726e1badc2c2ade6e153e2a&oe=5EC0979F">
       </a>
       <nav slot="navbar">
           <router-link class="router-link" to="/">Home</router-link>
@@ -14,7 +33,7 @@
     <Banner id="banner">
       <p
         slot="title"
-        style="color: aliceblue; padding-top: 200px; font-size: 96px"
+        style="color: aliceblue; padding-top: 280px; font-size: 96px"
         class="text-center"
       >
         Sadey Records
@@ -54,27 +73,26 @@ export default {
 </script>
 
 <style>
-  html {
-    background-image:none;
-    height: 100%;
-    background-color: #ffffff;
-}
-  img{
-        width: 100px;
-        height: 100px;
-    }
   #banner {
-    background-size: cover;
-    /*todo: find new image*/
-    background: url('assets/studio.jpg');
-    height: 100vh;
+    background: url('assets/hiphop.jpg');
+  }
+  a {
+    line-height: 0px;
+  }
+  .logo {
+    width: 120px;
+    height: 120px;
+  }
+  nav {
+    padding: 50px;
   }
   .router-link {
-    padding: 5px;
-    font-size: 16px;
-    color: gold;
+    padding: 10px;
+    font-size: 20px;
+    color: #ffe100;
+    text-decoration: none;
   }
   .router-link:hover {
-    color: #ffe100;
+    text-decoration: underline;
   }
 </style>
