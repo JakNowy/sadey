@@ -1,9 +1,7 @@
 <template>
-    <div>
-        <transition mode="out-in" :name="name">
-            <p :key="counter"> {{ headers[counter] }}</p>
-        </transition>
-    </div>
+    <transition mode="out-in">
+        <p :key="counter"> {{ headers[counter] }}</p>
+    </transition>
 </template>
 
 <script>
@@ -25,7 +23,7 @@
             },
             name: {
                 type: String,
-                required: true,
+                required: false,
             },
         },
         data () {
@@ -33,7 +31,7 @@
                 counter: -1,
             }
         },
-        created() {
+        mounted() {
             setTimeout(() => {
                 this.nextText()
                 setInterval(this.nextText, this.interval)
@@ -51,5 +49,14 @@
     }
 </script>
 
-<style scoped>
+<style>
+    .v-enter, .v-leave-to {
+      opacity: 0;
+      /*transform: translateX(20px);*/
+    }
+
+    .v-enter-active, .v-leave-active {
+      transition: all 1s;
+    }
+
 </style>

@@ -2,6 +2,7 @@ const path = require('path')
 const PrerenderSPAPlugin = require('prerender-spa-plugin')
 
 module.exports = {
+  publicPath: '/my-first-project/', //todo: configure githubpages
   configureWebpack: {
     plugins: [
       new PrerenderSPAPlugin({
@@ -12,4 +13,15 @@ module.exports = {
       })
     ]
   },
+
+  pluginOptions: {
+    quasar: {
+      importStrategy: 'kebab',
+      rtlSupport: true
+    }
+  },
+
+  transpileDependencies: [
+    'quasar'
+  ]
 }
