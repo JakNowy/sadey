@@ -1,16 +1,16 @@
 <template>
   <div>
     <vue-particles
-        :particleOpacity="0.7"
+        :particleOpacity="0.1"
         :particlesNumber="80"
-        shapeType="circle"
+        shapeType="edge"
         :particleSize="4"
-        linesColor="#dedede"
+        linesColor="#FFD700"
         :linesWidth="1"
         :lineLinked="true"
-        :lineOpacity="0.4"
+        :lineOpacity="0.2"
         :linesDistance="150"
-        :moveSpeed="3"
+        :moveSpeed="2.5"
         :hoverEffect="true"
         hoverMode="grab"
         :clickEffect="true"
@@ -43,7 +43,7 @@
         slot="subtitle"
         style="color: aliceblue; font-size: 32px"
         class="text-center"
-        :headers="['Nagrania Audio', 'Mix/Master' ,'Marketing człowieniu', 'Rapik robię też']"
+        :headers="['Nagrania Audio', 'MixMaster' ,'Pr odukcje Video', 'Rapik robię też']"
         :interval=3500
       />
     </Banner>
@@ -77,7 +77,7 @@ export default {
     background: url('assets/hiphop.jpg');
   }
   a {
-    line-height: 0px;
+    line-height: 0;
   }
   .logo {
     width: 120px;
