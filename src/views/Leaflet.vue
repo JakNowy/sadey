@@ -21,7 +21,6 @@
 
 <script>
 import {LMap, LTileLayer} from 'vue2-leaflet';
-import { StripeElements } from 'vue-stripe-checkout';
 
 export default {
   components: {
