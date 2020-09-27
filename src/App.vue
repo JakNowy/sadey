@@ -2,6 +2,7 @@
   <div>
     <Home/>
     <About/>
+<!--    <Stripe/>-->
     <Map/>
 <!--    <Leaflet/>-->
   </div>
@@ -13,6 +14,7 @@ import Home from "@/views/Home";
 import About from "@/views/About";
 import Map from "@/views/Map";
 import Leaflet from "@/views/Leaflet";
+// import Stripe from "@/views/Stripe";
 
 export default {
   components: {
@@ -20,6 +22,7 @@ export default {
     About,
     Map,
     Leaflet,
+    // Stripe,
   },
 
   data () {

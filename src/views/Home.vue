@@ -20,7 +20,7 @@
     ></vue-particles>
 
     <Header style="padding: 0 50px 0 50px; border-bottom: gold 1px solid; background: black">
-      <a slot="logo" href="https://www.facebook.com/StudioNoClaims/">
+      <a slot="logo" href="https://www.facebook.com/mateusz.gajtkowski/">
         <img class="logo" src="https://scontent-waw1-1.xx.fbcdn.net/v/t1.0-1/p320x320/90767039_194232475335239_3092828644456792064_o.jpg?_nc_cat=105&_nc_sid=dbb9e7&_nc_ohc=HW3tomYTdBIAX9LPVzB&_nc_ht=scontent-waw1-1.xx&_nc_tp=6&oh=a4c89b96c726e1badc2c2ade6e153e2a&oe=5EC0979F">
       </a>
       <nav slot="navbar">
@@ -36,7 +36,7 @@
         style="color: aliceblue; padding-top: 280px; font-size: 96px"
         class="text-center"
       >
-        Sadey Records
+        Gajtek Shop
       </p>
 
       <Toggler
@@ -44,8 +44,8 @@
         style="color: aliceblue; font-size: 32px"
         class="text-center"
         name="banner"
-        :headers="['Nagrania Audio', 'MixMaster' ,'Pr odukcje Video', 'Rapik robię też']"
-        :interval=3500
+        :headers="['Sklep z jedzonkiem!',]"
+        :interval=0
       />
     </Banner>
 
