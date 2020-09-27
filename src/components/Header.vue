@@ -22,5 +22,6 @@ header {
     width: 100%;
     display: flex !important;
     justify-content: space-between;
+    z-index: 1000;
 }
 </style>

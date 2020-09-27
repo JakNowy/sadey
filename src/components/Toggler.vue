@@ -1,5 +1,5 @@
 <template>
-    <transition mode="out-in">
+    <transition mode="out-in" :name="name">
         <p :key="counter"> {{ headers[counter] }}</p>
     </transition>
 </template>
@@ -50,13 +50,6 @@
 </script>
 
 <style>
-    .v-enter, .v-leave-to {
-      opacity: 0;
-      /*transform: translateX(20px);*/
-    }
 
-    .v-enter-active, .v-leave-active {
-      transition: all 1s;
-    }
 
 </style>

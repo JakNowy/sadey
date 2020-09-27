@@ -3,6 +3,8 @@ import App from './App.vue'
 import router from './router'
 import './quasar'
 import VueParticles from 'vue-particles'
+import 'leaflet/dist/leaflet.css';
+
 
 Vue.use(VueParticles)
 Vue.config.productionTip = false
