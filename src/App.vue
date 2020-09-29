@@ -1,7 +1,8 @@
 <template>
   <div>
-    <Home/>
-    <About/>
+    <Home style="border-bottom: 2px solid #8cca3b;"/>
+    <About style="border-bottom: 2px solid #8cca3b; padding: 100px 0 300px 0;"/>
+    <Form/>
     <Map/>
 <!--    <Leaflet/>-->
   </div>
@@ -13,12 +14,14 @@ import Home from "@/views/Home";
 import About from "@/views/About";
 import Map from "@/views/Map";
 import Leaflet from "@/views/Leaflet";
+import Form from "@/views/Form";
 
 export default {
   components: {
     Home,
     About,
     Map,
+    Form,
     Leaflet,
   },
 

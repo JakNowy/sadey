@@ -2,7 +2,7 @@ const path = require('path')
 const PrerenderSPAPlugin = require('prerender-spa-plugin')
 
 module.exports = {
-  publicPath: '/sadey/',
+  publicPath: '/gajtek/',
   configureWebpack: {
     // plugins: [
     //   new PrerenderSPAPlugin({
