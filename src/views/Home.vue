@@ -4,10 +4,17 @@
       <a slot="logo" href="https://www.facebook.com/StudioNoClaims/">
 <!--        <img class="logo" src="https://scontent-waw1-1.xx.fbcdn.net/v/t1.0-1/p320x320/90767039_194232475335239_3092828644456792064_o.jpg?_nc_cat=105&_nc_sid=dbb9e7&_nc_ohc=HW3tomYTdBIAX9LPVzB&_nc_ht=scontent-waw1-1.xx&_nc_tp=6&oh=a4c89b96c726e1badc2c2ade6e153e2a&oe=5EC0979F">-->
       </a>
-      <nav slot="navbar">
-          <router-link class="router-link" to="/">Home</router-link>
-          <router-link class="router-link" to="/about">About</router-link>
-          <a class="router-link" href="https://www.facebook.com/StudioNoClaims/" target="_blank">Facebook</a>
+      <nav slot="navbar" class="row">
+          <router-link class="router-link" to="/">O nas</router-link>
+          <router-link class="router-link" to="/about">Jak to działa</router-link>
+          <router-link class="router-link" to="/about">Zamów</router-link>
+          <router-link class="router-link" to="/about">Dobierz dietę</router-link>
+          <router-link class="router-link" to="/about">Blog</router-link>
+          <router-link class="router-link" to="/about">Kontakt</router-link>
+          <q-btn round color="#8cca3b" icon="shopping_cart" style="font-size: 8px; width: 24px; height: 24px" class="q-mx-sm"/>
+          <q-btn round color="#8cca3b" icon="account_circle" style="font-size: 8px; width: 24px; height: 24px" class="q-mx-sm"/>
+
+<!--          <q-btn></q-btn>-->
       </nav>
     </Navbar>
 
@@ -17,25 +24,25 @@
         style="color: #8cca3b; padding-top: 280px; font-size: 96px"
         class="text-center"
       >
-<!--        Podnóż foods-->
-      </p>
+        Podnóż
+      <p>
 
-      <Toggler
+      <p
         slot="subtitle"
-        style="color: #8cca3b; font-size: 96px; padding-top: 64px"
         class="text-center"
-        name="banner"
-        :headers="['Podnóż foods']"
-        :interval=1000
-      />
-      <Toggler
-        slot="subtitle"
-        style="color: #8cca3b; font-size: 32px;"
+        style="color: #8cca3b; font-size: 24px"
+      >
+        Jedzenie skrojone na miarę
+      <p/>
+
+      <div
+        slot="buttons"
         class="text-center"
-        name="banner"
-        :headers="['Very Hungry?', 'ON the way!', 'Super Podnóż ;)', '']"
-        :interval=5000
-      />
+        style="color: #8cca3b; font-size: 24px"
+      >
+          <q-btn style="background-color: #8cca3b; color: whitesmoke" class="q-mx-md">Zamów</q-btn>
+          <q-btn class="q-mx-md">Jak to działa?</q-btn>
+      </div>
 
     </Banner>
 
@@ -66,6 +73,7 @@ export default {
 </script>
 
 <style>
+
   #banner {
     /*background: url('../assets/podnóż.jpg');*/
     background-attachment: fixed;
@@ -78,12 +86,11 @@ export default {
     height: 120px;
   }
   nav {
-    padding: 36px;
+    padding: 16px;
   }
   .router-link {
     padding: 10px;
-    padding-top: 6px;
-    font-size: 24px;
+    font-size: 16px;
     color: #d7ffca;
     text-decoration: none;
   }

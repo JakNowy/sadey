@@ -2,6 +2,7 @@
     <section>
         <slot name="title"></slot>
         <slot name="subtitle"></slot>
+        <slot name="buttons"></slot>
     </section>
 </template>
 

@@ -2,8 +2,9 @@
   <div>
     <Home style="border-bottom: 2px solid #8cca3b;"/>
     <About style="border-bottom: 2px solid #8cca3b; padding: 100px 0 300px 0;"/>
-    <Form/>
-    <Map/>
+<!--    <Form/>-->
+<!--    <Map/>-->
+    <Contact/>
 <!--    <Leaflet/>-->
   </div>
 </template>
@@ -15,6 +16,7 @@ import About from "@/views/About";
 import Map from "@/views/Map";
 import Leaflet from "@/views/Leaflet";
 import Form from "@/views/Form";
+import Contact from "@/views/Contact";
 
 export default {
   components: {
@@ -23,6 +25,7 @@ export default {
     Map,
     Form,
     Leaflet,
+    Contact,
   },
 
   data () {
@@ -35,5 +38,6 @@ export default {
 <style>
   section {
     height: 100vh;
+    border-bottom: 2px solid #8cca3b
   }
 </style>
