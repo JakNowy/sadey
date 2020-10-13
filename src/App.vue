@@ -1,7 +1,8 @@
 <template>
-  <div>
+  <div @scroll="console.log(1)">
     <Home style="border-bottom: 2px solid #8cca3b;"/>
-    <About style="border-bottom: 2px solid #8cca3b; padding: 100px 0 300px 0;"/>
+<!--    <About style="border-bottom: 2px solid #8cca3b; padding: 100px 0 300px 0;"/>-->
+    <HowItWorks/>
 <!--    <Form/>-->
 <!--    <Map/>-->
     <Contact/>
@@ -17,6 +18,7 @@ import Map from "@/views/Map";
 import Leaflet from "@/views/Leaflet";
 import Form from "@/views/Form";
 import Contact from "@/views/Contact";
+import HowItWorks from "@/views/HowItWorks";
 
 export default {
   components: {
@@ -26,12 +28,13 @@ export default {
     Form,
     Leaflet,
     Contact,
+    HowItWorks,
   },
 
   data () {
     return {
     }
-  }
+  },
 }
 </script>
 

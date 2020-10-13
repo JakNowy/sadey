@@ -5,8 +5,10 @@ import './quasar'
 import VueParticles from 'vue-particles'
 import 'leaflet/dist/leaflet.css';
 
+const VueScrollTo = require('vue-scrollto');
 
 Vue.use(VueParticles)
+Vue.use(VueScrollTo)
 Vue.config.productionTip = false
 
 new Vue({

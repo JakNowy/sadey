@@ -8,13 +8,6 @@
 
 <script>
     export default {
-        props: {
-            backgroundURL: {
-                type: String,
-                required: true,
-            }
-        },
-
         data () {
             return {
             }

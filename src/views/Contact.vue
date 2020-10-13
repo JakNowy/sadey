@@ -1,5 +1,5 @@
 <template>
-  <section class="row q-ma-xl q-pa-xl justify-evenly">
+  <section class="row q-ma-xl q-pa-xl justify-evenly" id="contact">
     <h3 class="col-12 text-center">Kontakt</h3>
     <q-card class="col-2 q-pa-lg">
       <p>

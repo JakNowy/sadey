@@ -1,16 +1,29 @@
 <template>
   <div>
-    <Navbar class="row justify-center">
+    <Navbar class="row justify-center" background-primary="none" background-secondary="red">
       <a slot="logo" href="https://www.facebook.com/StudioNoClaims/">
 <!--        <img class="logo" src="https://scontent-waw1-1.xx.fbcdn.net/v/t1.0-1/p320x320/90767039_194232475335239_3092828644456792064_o.jpg?_nc_cat=105&_nc_sid=dbb9e7&_nc_ohc=HW3tomYTdBIAX9LPVzB&_nc_ht=scontent-waw1-1.xx&_nc_tp=6&oh=a4c89b96c726e1badc2c2ade6e153e2a&oe=5EC0979F">-->
       </a>
       <nav slot="navbar" style="color: #8cca3b">
-          <router-link class="router-link" to="/">O nas</router-link>
-          <router-link class="router-link" to="/about">Jak to działa</router-link>
-          <router-link class="router-link" to="/about">Zamów</router-link>
-          <router-link class="router-link" to="/about">Dobierz dietę</router-link>
-          <router-link class="router-link" to="/about">Blog</router-link>
-          <router-link class="router-link" to="/about">Kontakt</router-link>
+          <q-btn round color="#8cca3b" icon="shopping_cart" style="font-size: 8px; width: 24px; height: 24px" class="q-mx-sm"/>
+          <q-btn round color="#8cca3b" icon="account_circle" style="font-size: 8px; width: 24px; height: 24px" class="q-mx-sm"/>
+          <span class="q-mx-xl q-px-xl">
+            <router-link class="router-link" v-scroll-to="{
+              el: '#banner'
+            }" to="/">O nas</router-link>
+
+            <router-link v-scroll-to="{
+              el: '#how-it-works'
+            }" class="router-link" to="/">Jak to działa</router-link>
+
+            <router-link class="router-link" to="/about">Zamów</router-link>
+            <router-link class="router-link" to="/about">Dobierz dietę</router-link>
+            <router-link class="router-link" to="/about">Blog</router-link>
+
+            <router-link v-scroll-to="{
+              el: '#contact'
+            }" class="router-link" to="/">Kontakt</router-link>
+          </span>
           <q-btn round color="#8cca3b" icon="shopping_cart" style="font-size: 8px; width: 24px; height: 24px" class="q-mx-sm"/>
           <q-btn round color="#8cca3b" icon="account_circle" style="font-size: 8px; width: 24px; height: 24px" class="q-mx-sm"/>
 
@@ -18,7 +31,7 @@
       </nav>
     </Navbar>
 
-    <Banner id="banner" style="border: #8cca3b 1px solid">
+    <Banner id="banner" style="border: #8cca3b 1px solid" background-u-r-l="">
       <p
         slot="title"
         style="color: #8cca3b; padding-top: 280px; font-size: 96px"
@@ -60,13 +73,8 @@ export default {
     Banner,
     Navbar,
   },
-  created () {
-    window.addEventListener('scroll', this.handleScroll);
-  },
-  destroyed () {
-    window.removeEventListener('scroll', this.handleScroll);
-  },
-  methods: {
+  data() {
+    return {}
   },
 }
 
