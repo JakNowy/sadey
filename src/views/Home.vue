@@ -1,10 +1,10 @@
 <template>
   <div>
-    <Navbar style="background: #8cca3b">
+    <Navbar class="row justify-center">
       <a slot="logo" href="https://www.facebook.com/StudioNoClaims/">
 <!--        <img class="logo" src="https://scontent-waw1-1.xx.fbcdn.net/v/t1.0-1/p320x320/90767039_194232475335239_3092828644456792064_o.jpg?_nc_cat=105&_nc_sid=dbb9e7&_nc_ohc=HW3tomYTdBIAX9LPVzB&_nc_ht=scontent-waw1-1.xx&_nc_tp=6&oh=a4c89b96c726e1badc2c2ade6e153e2a&oe=5EC0979F">-->
       </a>
-      <nav slot="navbar" class="row">
+      <nav slot="navbar" style="color: #8cca3b">
           <router-link class="router-link" to="/">O nas</router-link>
           <router-link class="router-link" to="/about">Jak to działa</router-link>
           <router-link class="router-link" to="/about">Zamów</router-link>
@@ -18,7 +18,7 @@
       </nav>
     </Navbar>
 
-    <Banner id="banner">
+    <Banner id="banner" style="border: #8cca3b 1px solid">
       <p
         slot="title"
         style="color: #8cca3b; padding-top: 280px; font-size: 96px"
@@ -75,8 +75,8 @@ export default {
 <style>
 
   #banner {
-    /*background: url('../assets/podnóż.jpg');*/
-    background-attachment: fixed;
+    background: url('../assets/3.jpg');
+    /*background-attachment: fixed;*/
   }
   a {
     line-height: 0;
@@ -86,10 +86,10 @@ export default {
     height: 120px;
   }
   nav {
-    padding: 16px;
+    padding: 32px;
   }
   .router-link {
-    padding: 10px;
+    padding: 10px 16px;
     font-size: 16px;
     color: #d7ffca;
     text-decoration: none;
