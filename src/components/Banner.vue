@@ -1,8 +1,10 @@
 <template>
     <section>
+      <slot name="card">
         <slot name="title"></slot>
         <slot name="subtitle"></slot>
         <slot name="buttons"></slot>
+      </slot>
     </section>
 </template>
 

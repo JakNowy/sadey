@@ -1,12 +1,10 @@
 <template>
-  <div>
-    <Navbar class="row justify-center" background-primary="none" background-secondary="red">
-      <a slot="logo" href="https://www.facebook.com/StudioNoClaims/">
-<!--        <img class="logo" src="https://scontent-waw1-1.xx.fbcdn.net/v/t1.0-1/p320x320/90767039_194232475335239_3092828644456792064_o.jpg?_nc_cat=105&_nc_sid=dbb9e7&_nc_ohc=HW3tomYTdBIAX9LPVzB&_nc_ht=scontent-waw1-1.xx&_nc_tp=6&oh=a4c89b96c726e1badc2c2ade6e153e2a&oe=5EC0979F">-->
-      </a>
-      <nav slot="navbar" style="color: #8cca3b">
-          <q-btn round color="#8cca3b" icon="shopping_cart" style="font-size: 8px; width: 24px; height: 24px" class="q-mx-sm"/>
-          <q-btn round color="#8cca3b" icon="account_circle" style="font-size: 8px; width: 24px; height: 24px" class="q-mx-sm"/>
+  <div style="font-family: 'Montserrat', sans-serif;">
+    <Navbar class="row justify-center" :style-primary="stylePrimary" :style-secondary="styleSecondary">
+      <nav slot="navbar" style="color: #545454; padding: 0 16px 0; border-bottom: 1px solid #8cca3b" class="row items-center">
+<!--          <q-btn round color="#8cca3b" icon="shopping_cart" style="font-size: 8px; width: 24px; height: 24px" class="q-mx-sm"/>-->
+<!--          <q-btn round color="#8cca3b" icon="account_circle" style="font-size: 8px; width: 24px; height: 24px" class="q-mx-sm"/>-->
+          <img slot="logo" src="../assets/podnoz_logo.png">
           <span class="q-mx-xl q-px-xl">
             <router-link class="router-link" v-scroll-to="{
               el: '#banner'
@@ -31,32 +29,37 @@
       </nav>
     </Navbar>
 
-    <Banner id="banner" style="border: #8cca3b 1px solid" background-u-r-l="">
+    <Banner id="banner" class="row justify-center">
+      <div slot="card" style="margin-top: 7%; padding: 64px; height: min-content; " class="col-6">
       <p
         slot="title"
-        style="color: #8cca3b; padding-top: 280px; font-size: 96px"
+        style="color: #8cca3b; font-size: 108px;"
         class="text-center"
       >
-        Podnóż
+        <strong>Podnóż</strong>
       <p>
 
       <p
         slot="subtitle"
         class="text-center"
-        style="color: #8cca3b; font-size: 24px"
+        style="color: #8cca3b; font-size: 32px; font-style: italic"
       >
-        Jedzenie skrojone na miarę
+        ~ Jedzenie skrojone na miarę ~
       <p/>
 
       <div
         slot="buttons"
         class="text-center"
-        style="color: #8cca3b; font-size: 24px"
+          style="color: #8cca3b; font-size: 60px"
       >
-          <q-btn style="background-color: #8cca3b; color: whitesmoke" class="q-mx-md">Zamów</q-btn>
-          <q-btn class="q-mx-md">Jak to działa?</q-btn>
-      </div>
+          <q-btn size="lg" style="background-color: #8cca3b; color: whitesmoke" class="q-mx-md">Zamów</q-btn>
 
+          <q-btn size="lg" class="q-mx-md" v-scroll-to="{
+              el: '#how-it-works'
+            }">Jak to działa?</q-btn>
+
+      </div>
+    </div>
     </Banner>
 
   </div>
@@ -74,36 +77,38 @@ export default {
     Navbar,
   },
   data() {
-    return {}
+    return {
+      stylePrimary: { position: 'absolute', background: 'none', color: '#8cca3b'},
+      styleSecondary: { position: 'fixed', background: '#545454', color:'#fff'},
+    }
   },
 }
 
 </script>
 
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
   #banner {
-    background: url('../assets/3.jpg');
+    background: url('../assets/1.jpg');
     /*background-attachment: fixed;*/
   }
   a {
     line-height: 0;
   }
-  .logo {
-    width: 120px;
-    height: 120px;
-  }
-  nav {
-    padding: 32px;
+  img {
+    height: 90px;
+    width: 65px;
   }
   .router-link {
     padding: 10px 16px;
-    font-size: 16px;
-    color: #d7ffca;
+    font-size: 20px;
+    color: #fff;
     text-decoration: none;
   }
   .router-link:hover {
     text-decoration: underline;
+    color: #8cca3b;
   }
   .banner-enter, .banner-leave-to {
     opacity: 0;

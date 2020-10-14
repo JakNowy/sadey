@@ -1,32 +1,33 @@
 <template>
-  <header :style="{background: background}">
-    <slot name="logo"></slot>
-    <slot name="navbar"></slot>
+  <header :style="style">
+    <slot name="navbar">
+      <slot name="logo"></slot>
+    </slot>
   </header>
 </template>
 
 <script>
 export default {
   props: {
-    backgroundPrimary: {
-      type: String
+    stylePrimary: {
+      type: Object
     },
-    backgroundSecondary: {
-      type: String
+    styleSecondary: {
+      type: Object
     },
   },
   data() {
     return {
-      background: 'none',
+      style: this.stylePrimary,
     }
   },
   methods: {
     handleScroll() {
-      const scrollTop = document.querySelector('#banner').getBoundingClientRect().bottom
-      if (scrollTop > 0) {
-        this.background = this.backgroundPrimary
+      const scrollTop = document.querySelector('body').getBoundingClientRect().top
+      if (scrollTop === 0) {
+        this.style = this.stylePrimary
       } else {
-        this.background = this.backgroundSecondary
+        this.style = this.styleSecondary
       }
     },
   },
@@ -42,7 +43,6 @@ export default {
 
 <style>
 header {
-  position: fixed;
   top: 0;
   width: 100%;
   display: flex !important;
