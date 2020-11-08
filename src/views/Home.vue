@@ -30,10 +30,10 @@
     </Navbar>
 
     <Banner id="banner" class="row justify-center">
-      <div slot="card" style="margin-top: 7%; padding: 64px; height: min-content; " class="col-6">
+      <div slot="card" style="margin-top: 12%; padding: 64px; height: min-content; " class="col-6">
       <p
         slot="title"
-        style="color: #8cca3b; font-size: 108px;"
+        style="color: #8cca3b; font-size: 84px;"
         class="text-center"
       >
         <strong>Podnóż</strong>
@@ -41,15 +41,15 @@
 
       <p
         slot="subtitle"
-        class="text-center"
-        style="color: #8cca3b; font-size: 32px; font-style: italic"
+        class="text-center q-my-lg"
+        style="color: #8cca3b; font-size: 28px; font-style: italic"
       >
         ~ Jedzenie skrojone na miarę ~
       <p/>
 
       <div
         slot="buttons"
-        class="text-center"
+        class="text-center q-my-lg"
           style="color: #8cca3b; font-size: 60px"
       >
           <q-btn size="lg" style="background-color: #8cca3b; color: whitesmoke" class="q-mx-md">Zamów</q-btn>
@@ -102,12 +102,9 @@ export default {
   }
   .router-link {
     padding: 10px 16px;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 1000;
-    /*color: #fff;*/
     color: #8cca3b;
-    /*color: #545454;*/
-    text-decoration: none;
   }
   .router-link:hover {
     text-decoration: underline;
