@@ -1,7 +1,7 @@
 <template>
   <header :style="style">
     <slot name="navbar">
-      <slot name="logo"></slot>
+      <slot name="logo"/>
     </slot>
   </header>
 </template>

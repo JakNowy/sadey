@@ -1,5 +1,5 @@
 <template>
-  <section style="margin: 0 5% 5% 5%; line-height: 28px; color: #8cca3b; height: auto" class="row justify-evenly">
+  <section style="margin: 0 5% 5% 5%; line-height: 28px; color: $primary; height: auto" class="row justify-evenly">
     <q-card class="q-ma-xl">
        <q-date v-model="dateInput" mask="YYYY-MM-DD HH:mm:ss Z"/>
     </q-card>

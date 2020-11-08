@@ -1,72 +1,43 @@
 <template>
-  <div style="font-family: 'Montserrat', sans-serif;">
-    <Navbar class="row justify-center" :style-primary="stylePrimary" :style-secondary="styleSecondary">
-      <nav slot="navbar" style="color: #545454; padding: 0 16px 0; border-bottom: 1px solid #8cca3b" class="row items-center">
-<!--          <q-btn round color="#8cca3b" icon="shopping_cart" style="font-size: 8px; width: 24px; height: 24px" class="q-mx-sm"/>-->
-<!--          <q-btn round color="#8cca3b" icon="account_circle" style="font-size: 8px; width: 24px; height: 24px" class="q-mx-sm"/>-->
-          <img slot="logo" src="../assets/podnoz_logo.png">
-          <span class="q-mx-xl q-px-xl">
-            <router-link class="router-link" v-scroll-to="{
-              el: '#banner'
-            }" to="/">O nas</router-link>
-
-            <router-link v-scroll-to="{
-              el: '#how-it-works'
-            }" class="router-link" to="/">Jak to działa</router-link>
-
-            <router-link class="router-link" to="/about">Zamów</router-link>
-            <router-link class="router-link" to="/about">Dobierz dietę</router-link>
-            <router-link class="router-link" to="/about">Blog</router-link>
-
-            <router-link v-scroll-to="{
-              el: '#contact'
-            }" class="router-link" to="/">Kontakt</router-link>
-          </span>
-          <q-btn round color="#8cca3b" icon="shopping_cart" style="font-size: 8px; width: 24px; height: 24px" class="q-mx-sm"/>
-          <q-btn round color="#8cca3b" icon="account_circle" style="font-size: 8px; width: 24px; height: 24px" class="q-mx-sm"/>
-
-<!--          <q-btn></q-btn>-->
-      </nav>
-    </Navbar>
-
     <Banner id="banner" class="row justify-center">
-      <div slot="card" style="margin-top: 12%; padding: 64px; height: min-content; " class="col-6">
-      <p
-        slot="title"
-        style="color: #8cca3b; font-size: 84px;"
-        class="text-center"
+      <div slot="card"
+           class="slogan"
       >
-        <strong>Podnóż</strong>
-      <p>
+        <h1
+          slot="title"
+          id="title"
+          class="text-center"
+        >
+          <strong style="font-size: 128px">Podnóż</strong>
+        </h1>
 
-      <p
-        slot="subtitle"
-        class="text-center q-my-lg"
-        style="color: #8cca3b; font-size: 28px; font-style: italic"
-      >
-        ~ Jedzenie skrojone na miarę ~
-      <p/>
+        <h2
+          slot="subtitle"
+          id="subtitle"
+          class="text-center"
+          style="font-size: 30px"
+        >
+          ~ Jedzenie skrojone na miarę ~
+        </h2>
 
-      <div
-        slot="buttons"
-        class="text-center q-my-lg"
-          style="color: #8cca3b; font-size: 60px"
-      >
-          <q-btn size="lg" style="background-color: #8cca3b; color: whitesmoke" class="q-mx-md">Zamów</q-btn>
+        <div
+          slot="buttons"
+          class="text-center"
+          id="buttons"
+        >
+            <q-btn size="lg" style="background-color: var(--primary); color: var(--secondary)" class="q-mx-md">Zamów</q-btn>
 
-          <q-btn size="lg" class="q-mx-md" v-scroll-to="{
-              el: '#how-it-works'
-            }">Jak to działa?</q-btn>
+            <q-btn size="lg" class="q-mx-md" v-scroll-to="{
+                el: '#how-it-works'
+              }">Jak to działa?</q-btn>
 
+        </div>
       </div>
-    </div>
     </Banner>
-
-  </div>
 </template>
 
 <script>
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/Header";
 import Banner from "@/components/Banner";
 import Toggler from "@/components/Toggler";
 
@@ -78,8 +49,8 @@ export default {
   },
   data() {
     return {
-      stylePrimary: { position: 'absolute', background: 'none', color: '#545454'},
-      styleSecondary: { position: 'fixed', background: '#545454', color:'#fff'},
+      stylePrimary: { position: 'absolute', background: 'none', color: '$accent'},
+      styleSecondary: { position: 'fixed', background: '$accent', color:'secondary'},
     }
   },
 }
@@ -87,39 +58,39 @@ export default {
 </script>
 
 <style>
+
   @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
+  html {
+    font-family: 'Montserrat', sans-serif;
+  }
+  #title {
+    color: var(--primary); font-size: 100px; margin: 5% 0 0 0;
+  }
+  #subtitle {
+    color: var(--primary); font-size: 28px; font-style: italic; margin: 0;
+  }
+  #buttons {
+    color: var(--primary); font-size: 60px;
+  }
   #banner {
-    background: url('../assets/1.jpg') no-repeat center;
+    background: url('../assets/1b.jpg') no-repeat center;
     background-size: cover;
   }
-  a {
-    line-height: 0;
+  .slogan {
+    border: var(--primary) solid 3px;
+    width: 45%;
+    margin-top: 12%;
+    padding: 64px;
+    height: min-content;
   }
-  img {
-    height: 90px;
-    width: 65px;
-  }
-  .router-link {
-    padding: 10px 16px;
-    font-size: 20px;
-    font-weight: 1000;
-    color: #8cca3b;
-  }
-  .router-link:hover {
-    text-decoration: underline;
-    color: #8cca3b;
-  }
-  .banner-enter, .banner-leave-to {
-    opacity: 0;
-    transform: translateX(1000px);
-  }
-  .banner-enter-to, .banner-leave {
-    opacity: 1;
-    /*transform: translate(-200px);*/
+  @media only screen and (max-width: 1366px) {
+    #title {
+      color: var(--primary); font-size: 72px; margin: 6% 0 0 0;
+    }
+    #subtitle {
+      color: var(--primary); font-size: 24px; font-style: italic; margin: 0;
+    }
   }
 
-  .banner-enter-active, .banner-leave-active {
-    transition: all 1s;
-  }
 </style>

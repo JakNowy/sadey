@@ -1,48 +1,24 @@
 <template>
   <section class="row q-ma-xl q-pa-xl justify-evenly" id="contact">
-    <h3 class="col-12 text-center">Kontakt</h3>
-    <q-card class="col-2 q-pa-lg">
-      <p>
-        Telefon:
-      </p>
-      <p>
-        123467890
-      </p>
-    </q-card>
-
-    <q-card class="col-2 q-pa-lg">
-      <p>
-        Email:
-      </p>
-      <p>
-        gajtek@podnoz.pl
-      </p>
-    </q-card>
-
-    <q-card class="col-2 q-pa-lg">
-      <p>
-        Adress:
-      </p>
-      <p>
-        agrestowa
-      </p>
-      <p>
-        porzeczkowa
-      </p>
-      <p>
-        party
-      </p>
-    </q-card>
+    <h4 class="col-12 text-center">Masz pytanie - Napisz do nas</h4>
+    <ContactCard header="Kontakt:" :lines="['+ 796 189 398', 'gajtkowski.mateusz@gmail.com', '8:00 – 20:00']"></ContactCard>
+    <ContactCard header="Diety:" :lines="['Fit', 'Wegetariańska', 'Vege']"></ContactCard>
+    <ContactCard header="Sklep:" :lines="['Twoje konto', ]"></ContactCard>
+    <ContactCard header="Polityka prywatności:" :lines="['+ 796 189 398', 'gajtkowski.mateusz@gmail.com', '8:00 – 20:00']"></ContactCard>
+    <ContactCard header="Regulamin:" :lines="['+ 796 189 398', 'gajtkowski.mateusz@gmail.com', '8:00 – 20:00']"></ContactCard>
   </section>
 </template>
 
 <script>
+import ContactCard from "@/components/ContactCard";
 
   export default {
-    components: {},
+    components: {
+      ContactCard,
+    },
     data() {
       return {
-        x: 5,
+
       }
     }
   };
@@ -50,7 +26,11 @@
 </script>
 
 <style scoped>
-  section{
+  h4 {
+    margin-top: 0;
+    margin-bottom: 100px;
+  }
+  section {
     border: None;
     height: auto;
   }

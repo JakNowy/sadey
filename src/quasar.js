@@ -7,9 +7,9 @@ import { Quasar } from 'quasar'
 Vue.use(Quasar, {
   config: {
     brand: {
-        primary: '#e82c77',
-        secondary: '#403434',
-        accent: '#f2f0f2',
+        primary: '#8cca3b',
+        secondary: '#e8efdf',
+        accent: '#545454',
     },
   },
   components: { /* not needed if importStrategy is not 'manual' */ },

@@ -1,18 +1,15 @@
 <template>
   <div>
+    <Header/>
     <Home/>
-<!--    <About style="border-bottom: 2px solid #8cca3b; padding: 100px 0 300px 0;"/>-->
     <HowItWorks/>
-<!--    <Form/>-->
-<!--    <Map/>-->
+    <WhyUs/>
     <Contact/>
-    <Calculator/>
-<!--    <Leaflet/>-->
   </div>
 </template>
 
-
 <script>
+import Header from "@/views/Header";
 import Home from "@/views/Home";
 import About from "@/views/About";
 import Map from "@/views/Map";
@@ -21,9 +18,11 @@ import Form from "@/views/Form";
 import Contact from "@/views/Contact";
 import Calculator from "@/views/Calculator";
 import HowItWorks from "@/views/HowItWorks";
+import WhyUs from "@/views/WhyUs";
 
 export default {
   components: {
+    Header,
     Home,
     About,
     Map,
@@ -32,12 +31,13 @@ export default {
     Contact,
     Calculator,
     HowItWorks,
+    WhyUs,
   },
 
   data () {
     return {
       color: {
-        primary: '#8cca3b',
+        primary: '$primary',
       },
     }
   },
@@ -45,11 +45,21 @@ export default {
 </script>
 
 <style>
-  body {
+  :root {
+    --primary   : #8cca3b;
+    --secondary : #e8efdf;
+    --accent    : #545454;
+    --dark      : #4b5440;
+    --positive  : #21BA45;
+    --negative  : #C10015;
+    --info      : #31CCEC;
+    --warning   : #F2C037;
+  }
+
+  html {
     font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
   section {
     height: 100vh;
-    border-bottom: 2px solid #8cca3b
   }
 </style>
