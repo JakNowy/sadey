@@ -78,7 +78,7 @@ export default {
   },
   data() {
     return {
-      stylePrimary: { position: 'absolute', background: 'none', color: '#8cca3b'},
+      stylePrimary: { position: 'absolute', background: 'none', color: '#545454'},
       styleSecondary: { position: 'fixed', background: '#545454', color:'#fff'},
     }
   },
@@ -90,8 +90,8 @@ export default {
   @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
   #banner {
-    background: url('../assets/1.jpg');
-    /*background-attachment: fixed;*/
+    background: url('../assets/1.jpg') no-repeat center;
+    background-size: cover;
   }
   a {
     line-height: 0;
@@ -102,8 +102,11 @@ export default {
   }
   .router-link {
     padding: 10px 16px;
-    font-size: 20px;
-    color: #fff;
+    font-size: 25px;
+    font-weight: 1000;
+    /*color: #fff;*/
+    color: #8cca3b;
+    /*color: #545454;*/
     text-decoration: none;
   }
   .router-link:hover {
