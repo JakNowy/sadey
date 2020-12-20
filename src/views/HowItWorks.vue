@@ -1,51 +1,19 @@
 <template>
-  <section style="margin: 0 5% 5% 5%; line-height: 28px" class="row justify-between q-pa-xl" id="how-it-works">
-    <h3 class="col-12 text-center q-pb-xl">Jak to działa?</h3>
-    <q-card class="col-md-2 q-pa-md text-center">
-      <img src="../assets/svg/okreslenie_zapotrzebowania.svg" alt="LOL">
-      <h6>1. Określenie zapotrzebowania kalorycznego</h6>
-      <p style="text-align: center" class=" q-pa-md text-center">
-        Na podstawie swoich personalnych danych, w dedykowanym kalkulatorze, określasz swoje
-        zapotrzebowanie kaloryczne.
-      </p>
-    </q-card>
-
-    <q-card class="col-md-2 q-pa-md text-center">
-      <img src="../assets/svg/wybor_diety.svg" alt="LOL">
-      <h6>2. Wybór diety</h6>
-      <p style="text-align: center" class=" q-pa-md text-center">
-        Spośród naszej oferty wybierasz najbardziej odpowiadającą Ci dietę, która pomoże CI w
-        zrealizowaniu założonych celów.
-      </p>
-    </q-card>
-
-    <q-card class="col-md-2 q-pa-md text-center">
-      <img src="../assets/svg/zakup_swiezych_produktow.svg" alt="LOL">
-      <h6>3. Zakup świeżych produktów</h6>
-      <p style="text-align: center" class=" q-pa-md text-center">
-        W międzyczasie my zamawiamy świeże produkty od lokalnych producentów.
-      </p>
-    </q-card>
-
-    <q-card class="col-md-2 q-pa-md text-center">
-      <img src="../assets/svg/dostarczanie_przepisow.svg" alt="LOL">
-      <h6>4. Dostarczenie składników i przepisu</h6>
-      <p style="text-align: center" class=" q-pa-md text-center">
-        Następnie dostarczamy Ci karty przepisów oraz wszystkie składniki potrzebne do
-        przygotowania dań, w ilościach dokładnie takich, jakie zostały określone w Twojej diecie w
-        opakowaniach wielokrotnego użytku.
-      </p>
-    </q-card>
-
-    <q-card class="col-md-2 q-pa-md text-center">
-      <img src="../assets/svg/gotowanie.svg" alt="LOL">
-      <h6>5. Przygotowanie posiłków</h6>
-      <p style="text-align: center" class=" q-pa-md text-center">
-        Wykonując instrukcję krok po kroku sam ugotujesz pyszne potrawy, których kaloryka będzie
-        zgodna z Twoim indywidualnym zapotrzebowaniem.
-      </p>
-    </q-card>
-
+  <section style="line-height: 28px" class="row justify-center q-pa-xl text-primary" id="how-it-works">
+    <h2 class="col-12 text-center">Jak to działa?</h2>
+    <div v-for="card in cards" class="col-md-4 q-pa-lg q-pt-xl text-center row">
+        <q-card class="q-pa-sm items-stretch ">
+          <img :src='card.img' alt="LOL">
+          <h5> {{ card.header }} </h5>
+          <p class="text-h6 q-pa-md text-center ">
+            {{ card.content }}
+          </p>
+        </q-card>
+    </div>
+    <p class="text-center font-bold text-h4 col-12 q-mt-xl">Dlaczego powinnineś nas zamówić?
+        <a href="#why-us" class="text-primary text-h4" >
+            Sprawdź poniżej.</a>
+    </p>
   </section>
 </template>
 
@@ -56,6 +24,28 @@ export default {
   },
   data () {
     return {
+        cards: [
+            {
+                img: 'svg/okreslenie_zapotrzebowania.svg',
+                header: 'TY określasz zapotrzebowania kaloryczne i wybierasz dietę',
+                content: 'Na podstawie swoich personalnych danych, w dedykowanym kalkulatorze, określasz swoje ' +
+                    'zapotrzebowanie kaloryczne, a następnie spośród naszej oferty wybierasz najbardziej ' +
+                    'odpowiadającą Ci dietę, która pomoże CI w zrealizowaniu założonych celów.',
+            },
+            {
+                img: 'svg/zakup_swiezych_produktow.svg',
+                header: 'MY dostarczamy Ci odmierzone składniki oraz przepisy',
+                content: 'Następnie my dostarczamy Ci karty przepisów oraz świeże składniki potrzebne do' +
+                    'przygotowania dań, w ilościach dokładnie takich, jakie zostały określone w Twojej diecie w ' +
+                    'opakowaniach wielokrotnego użytku.'
+            },
+            {
+                img: 'svg/gotowanie.svg',
+                header: 'TY przygotowujesz ciepłe posiłki',
+                content: 'Wykonując instrukcję krok po kroku sam gotujesz pyszne potrawy, których kaloryczność ' +
+                    'będzie zgodna z Twoim indywidualnym zapotrzebowaniem.',
+            }
+        ],
     };
   },
 };
@@ -69,7 +59,7 @@ export default {
   section {
     height: auto;
   }
-  h6 {
-    height: 15%;
+  h5 {
+    height: 10%;
   }
 </style>

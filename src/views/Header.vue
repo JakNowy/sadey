@@ -1,7 +1,7 @@
 <template>
     <Header class="row justify-center" :style-primary="stylePrimary" :style-secondary="styleSecondary">
       <nav slot="navbar" class="nav row items-center">
-<!--          <img id="logo" slot="logo" src="../assets/podnoz_logo.png">-->
+          <img id="logo" slot="logo" src="../assets/logo.png">
           <span class="q-mx-xl q-my-md q-px-xl">
             <router-link class="router-link" v-scroll-to="{
               el: '#banner'
@@ -56,8 +56,9 @@ export default {
     font-size: 8px; width: 24px; height: 24px
   }
   #logo {
-    height: 90px;
-    width: 65px;
+      padding: 2px 0;
+    height: 55px;
+    width: 40px;
   }
   .router-link {
     padding: 10px 16px;

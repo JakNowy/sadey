@@ -25,9 +25,9 @@
           class="text-center"
           id="buttons"
         >
-            <q-btn size="lg" style="background-color: var(--primary); color: var(--secondary)" class="q-mx-md">Zamów</q-btn>
+            <q-btn size="lg" class="bg-primary text-secondary q-mx-md">Zamów</q-btn>
 
-            <q-btn size="lg" class="q-mx-md" v-scroll-to="{
+            <q-btn size="lg" class="bg-secondary text-primary q-mx-md" v-scroll-to="{
                 el: '#how-it-works'
               }">Jak to działa?</q-btn>
 
@@ -74,7 +74,7 @@ export default {
     color: var(--primary); font-size: 60px;
   }
   #banner {
-    background: url('../assets/1b.jpg') no-repeat center;
+    background: url('../assets/background.jpg') no-repeat center;
     background-size: cover;
   }
   .slogan {
