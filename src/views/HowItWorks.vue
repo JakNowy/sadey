@@ -26,7 +26,7 @@ export default {
     return {
         cards: [
             {
-                img: 'svg/okreslenie_zapotrzebowania.svg',
+                img: '../assets/svg/okreslenie_zapotrzebowania.svg',
                 header: 'TY określasz zapotrzebowania kaloryczne i wybierasz dietę',
                 content: 'Na podstawie swoich personalnych danych, w dedykowanym kalkulatorze, określasz swoje ' +
                     'zapotrzebowanie kaloryczne, a następnie spośród naszej oferty wybierasz najbardziej ' +
