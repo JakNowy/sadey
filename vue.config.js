@@ -1,6 +1,6 @@
 
 module.exports = {
-  publicPath: '/sadey/',
+  publicPath: '/podnoz/',
   configureWebpack: {
     // plugins: [
     //   new PrerenderSPAPlugin({
