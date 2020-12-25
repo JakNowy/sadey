@@ -3,21 +3,20 @@
       <div slot="card"
            class="slogan"
       >
-        <h1
+        <p
           slot="title"
           id="title"
-          class="text-center"
+          class="text-center text-secondary"
         >
-          <strong style="font-size: 128px">Podnóż</strong>
-        </h1>
+        </p>
 
         <h2
           slot="subtitle"
           id="subtitle"
-          class="text-center"
-          style="font-size: 30px"
+          class="text-center text-secondary"
+          style="font-size: 64px; font-family: Pacifica; padding: 45px 0px;"
         >
-          ~ Jedzenie skrojone na miarę ~
+           Jedzenie skrojone na miarę
         </h2>
 
         <div
@@ -37,7 +36,6 @@
 </template>
 
 <script>
-import Navbar from "@/components/Header";
 import Banner from "@/components/Banner";
 import Toggler from "@/components/Toggler";
 
@@ -45,7 +43,6 @@ export default {
   components: {
     Toggler,
     Banner,
-    Navbar,
   },
   data() {
     return {
@@ -91,6 +88,12 @@ export default {
     #subtitle {
       color: var(--primary); font-size: 24px; font-style: italic; margin: 0;
     }
+  }
+  button{
+      transition-duration: 0.2s;
+  }
+  button:hover{
+      transform: scale(1.04);
   }
 
 </style>

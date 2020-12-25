@@ -1,9 +1,9 @@
 <template>
   <section style="line-height: 28px" class="row justify-center q-pa-xl text-primary" id="how-it-works">
     <h2 class="col-12 text-center">Jak to działa?</h2>
-    <div v-for="card in cards" class="col-md-4 q-pa-lg q-pt-xl text-center row">
-        <q-card class="q-pa-sm items-stretch ">
-          <img :src='card.img' alt="LOL">
+    <div v-for="card in cards" class="col-md-4 col-lg-3 q-pa-lg q-pt-xl text-center row">
+        <q-card class="q-pa-sm items-stretch">
+          <img ref="img" @mouseover="cardHover" :src="getImgUrl(card.img)" alt="LOL">
           <h5> {{ card.header }} </h5>
           <p class="text-h6 q-pa-md text-center ">
             {{ card.content }}
@@ -26,7 +26,7 @@ export default {
     return {
         cards: [
             {
-                img: '../assets/svg/okreslenie_zapotrzebowania.svg',
+                img: 'svg/okreslenie_zapotrzebowania.svg',
                 header: 'TY określasz zapotrzebowania kaloryczne i wybierasz dietę',
                 content: 'Na podstawie swoich personalnych danych, w dedykowanym kalkulatorze, określasz swoje ' +
                     'zapotrzebowanie kaloryczne, a następnie spośród naszej oferty wybierasz najbardziej ' +
@@ -48,6 +48,13 @@ export default {
         ],
     };
   },
+    methods: {
+        getImgUrl(src) {
+            return require('../assets/'+src)
+        },
+        cardHover() {
+        },
+},
 };
 </script>
 

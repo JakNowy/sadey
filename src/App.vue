@@ -1,11 +1,11 @@
 <template>
-  <div>
-    <Header/>
-    <Home/>
-    <HowItWorks/>
-    <WhyUs/>
-    <Contact/>
-  </div>
+    <div>
+        <Header/>
+        <Home/>
+        <HowItWorks/>
+        <WhyUs/>
+        <Contact/>
+    </div>
 </template>
 
 <script>
@@ -21,45 +21,46 @@ import HowItWorks from "@/views/HowItWorks";
 import WhyUs from "@/views/WhyUs";
 
 export default {
-  components: {
-    Header,
-    Home,
-    About,
-    Map,
-    Form,
-    Leaflet,
-    Contact,
-    Calculator,
-    HowItWorks,
-    WhyUs,
-  },
+    components: {
+        Header,
+        Home,
+        About,
+        Map,
+        Form,
+        Leaflet,
+        Contact,
+        Calculator,
+        HowItWorks,
+        WhyUs,
+    },
 
-  data () {
-    return {
-      color: {
-        primary: '$primary',
-      },
-    }
-  },
+    data() {
+        return {
+            color: {
+                primary: '$primary',
+            },
+        }
+    },
 }
 </script>
 
 <style>
-  :root {
-    --primary   : #8cca3b;
-    --secondary : #e8efdf;
-    --accent    : #545454;
-    --dark      : #4b5440;
-    --positive  : #21BA45;
-    --negative  : #C10015;
-    --info      : #31CCEC;
-    --warning   : #F2C037;
-  }
+:root {
+    --primary: #8cca3b;
+    --secondary: #e8efdf;
+    --accent: #545454;
+    --dark: #4b5440;
+    --positive: #21BA45;
+    --negative: #C10015;
+    --info: #31CCEC;
+    --warning: #F2C037;
+}
 
-  html {
+html {
     font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  }
-  section {
+}
+
+section {
     height: 100vh;
-  }
+}
 </style>
