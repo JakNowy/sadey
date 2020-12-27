@@ -1,9 +1,9 @@
 <template>
-    <Navbar class="row justify-center" ref="navbar" :logo-style-primary="logoStylePrimary"
+    <Navbar class="row justify-center" :logo-style-primary="logoStylePrimary"
             :logo-style-secondary="logoStyleSecondary" :navbar-style-primary="navbarStylePrimary"
-            :navbar-style-secondary="navbarStyleSecondary" @styleLogo="styleLogo($event)">
-        <nav slot="navbar" class="nav row items-center">
-            <img id="logo" ref="logo" slot="logo" src="../assets/logo.png">
+            :navbar-style-secondary="navbarStyleSecondary" :scroll-breakpoint=0>
+        <nav slot="nav" class="nav row items-center">
+            <img ref="logo" id="logo" slot="logo" src="../assets/logo.png">
             <span class="q-mx-xl q-my-md q-px-xl">
                 <router-link class="router-link" v-scroll-to="{
                   el: '#banner'
@@ -44,13 +44,6 @@ export default {
         }
     },
     methods: {
-        styleLogo (style) {
-            const logo = document.querySelector('#logo')
-            console.log(style)
-            logo.style = style.height
-            logo.width = style.width
-            console.log(logo)
-        },
     },
 }
 

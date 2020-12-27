@@ -1,9 +1,8 @@
-<!--TODO: Logo and header element that is being styled should be in the same component - probably navbar -->
-<!--TODO: REFACTOR THIS SHIT-->
+<!--TODO: Redesign component structure so it's conveniently reusable -->
 
 <template>
-    <header>
-        <slot name="navbar">
+    <header ref="header">
+        <slot name="nav">
             <slot name="logo"/>
         </slot>
     </header>
@@ -12,7 +11,7 @@
 <script>
 export default {
     props: {
-        navbar: Object,
+        scrollBreakpoint: Number,
         logoStylePrimary: Object,
         logoStyleSecondary: Object,
         navbarStylePrimary: Object,
@@ -26,23 +25,50 @@ export default {
     methods: {
         handleScroll() {
             const scrollTop = document.querySelector('body').getBoundingClientRect().top
-            if (scrollTop === 0) {
-                this.$emit('styleLogo', this.logoStylePrimary)
+            if (-scrollTop <= this.scrollBreakpoint) {
+                this.styleLogo(this.logoStylePrimary)
                 this.styleNavbar(this.navbarStylePrimary)
             } else {
-                this.$emit('styleLogo', this.logoStyleSecondary)
-                console.log(this.navbarStyleSecondary)
+                this.styleLogo(this.logoStyleSecondary)
                 this.styleNavbar(this.navbarStyleSecondary)
             }
         },
+        styleLogo (style) {
+            const logo = this.$parent.$refs.logo
+            if (logo) {
+                // This works
+                logo.width = style.width
+                logo.height = style.height
+            }
+
+            // This works
+            // for (const [key, value] of Object.entries(style)) {
+            //     logo.setAttribute(key, value)
+            // }
+
+            // This doesnt work
+            // logo.style.width = style.width
+            // logo.style.height = style.height
+
+        },
         styleNavbar(style) {
-            const navbar = document.querySelector('header')
-            navbar.style.position = style.position
-            navbar.style.background = style.background
+            const navbar = this.$refs.header
+            if (navbar) {
+                // TODO: Rework hardcoding attributes
+                // This works
+                navbar.style.background = style.background
+                navbar.style.position = style.position
+            }
+
+            // This doesnt work
+            // for (const [key, value] of Object.entries(style)) {
+            //     navbar.setAttribute(style, `${key}: ${value}`)
+            // }
+
         },
     },
     mounted() {
-        this.$emit('styleLogo', this.logoStylePrimary)
+        this.styleLogo(this.logoStylePrimary)
         this.styleNavbar(this.navbarStylePrimary)
         window.addEventListener('scroll', this.handleScroll);
     },
@@ -61,4 +87,5 @@ header {
     justify-content: space-between;
     z-index: 1000;
 }
+
 </style>
