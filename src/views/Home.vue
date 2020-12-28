@@ -14,7 +14,6 @@
           slot="subtitle"
           id="subtitle"
           class="text-center text-secondary"
-          style="font-size: 64px; font-family: Pacifica; padding: 45px 0px;"
         >
            Jedzenie skrojone na miarę
         </h2>
@@ -81,6 +80,16 @@ export default {
     padding: 64px;
     height: min-content;
   }
+  button{
+      transition-duration: 0.2s;
+  }
+  button:hover{
+      transform: scale(1.04);
+  }
+  h2 {
+    font-size: 64px; font-family: Pacifica; padding: 45px 0px;
+  }
+
   @media only screen and (max-width: 1366px) {
     #title {
       color: var(--primary); font-size: 72px; margin: 6% 0 0 0;
@@ -89,11 +98,15 @@ export default {
       color: var(--primary); font-size: 24px; font-style: italic; margin: 0;
     }
   }
-  button{
-      transition-duration: 0.2s;
-  }
-  button:hover{
-      transform: scale(1.04);
+
+  @media only screen and (max-width: 1023px) {
+    .slogan {
+      width: 80%;
+      padding: 20px;
+    }
+    #subtitle {
+      font-size: 44px;
+    }
   }
 
 </style>
