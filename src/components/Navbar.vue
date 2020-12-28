@@ -11,27 +11,31 @@
 <script>
 export default {
     props: {
+        mobileBreakpoint: Number,
         scrollBreakpoint: Number,
         logoStylePrimary: Object,
         logoStyleSecondary: Object,
         navbarStylePrimary: Object,
         navbarStyleSecondary: Object,
+        navbarStylePrimaryMobile: Object,
+        navbarStyleSecondaryMobile: Object,
     },
     data() {
         return {
-            logo: document.querySelector('#logo'),
         }
     },
     methods: {
         handleScroll() {
-            const scrollTop = document.querySelector('body').getBoundingClientRect().top
-            if (-scrollTop <= this.scrollBreakpoint) {
-                this.styleLogo(this.logoStylePrimary)
-                this.styleNavbar(this.navbarStylePrimary)
-            } else {
-                this.styleLogo(this.logoStyleSecondary)
-                this.styleNavbar(this.navbarStyleSecondary)
-            }
+          if (window.innerWidth > this.mobileBreakpoint) {
+              const scrollTop = document.querySelector('body').getBoundingClientRect().top
+              if (-scrollTop <= this.scrollBreakpoint) {
+                  this.styleLogo(this.logoStylePrimary)
+                  this.styleHeader(this.navbarStylePrimary)
+              } else {
+                  this.styleLogo(this.logoStyleSecondary)
+                  this.styleHeader(this.navbarStyleSecondary)
+              }
+          }
         },
         styleLogo (style) {
             const logo = this.$parent.$refs.logo
@@ -51,13 +55,13 @@ export default {
             // logo.style.height = style.height
 
         },
-        styleNavbar(style) {
-            const navbar = this.$refs.header
-            if (navbar) {
+        styleHeader(style) {
+            const header = this.$refs.header
+            if (header) {
                 // TODO: Rework hardcoding attributes
                 // This works
-                navbar.style.background = style.background
-                navbar.style.position = style.position
+                header.style.background = style.background
+                header.style.position = style.position
             }
 
             // This doesnt work
@@ -68,8 +72,12 @@ export default {
         },
     },
     mounted() {
+        if (window.innerWidth >= this.mobileBreakpoint) {
+          this.styleHeader(this.navbarStylePrimary)
+        } else {
+          this.styleHeader({'background': '#545454'})
+        }
         this.styleLogo(this.logoStylePrimary)
-        this.styleNavbar(this.navbarStylePrimary)
         window.addEventListener('scroll', this.handleScroll);
     },
     destroy() {
