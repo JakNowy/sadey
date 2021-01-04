@@ -5,7 +5,7 @@
         <q-card class="items-stretch q-mx-lg bg-secondary">
           <div class="h2 bg-accent"> {{ card.header }} </div>
           <img class="q-my-lg q-my-sm-sm text-center" ref="img" @mouseover="cardHover" :src="getImgUrl(card.img)" :alt="card.img">
-          <p class="text-h6 q-pa-sm text-center text-black content line-height">
+          <p class="text-h6 q-pa-sm text-center text-black content line-height justify-center">
             {{ card.content }}
           </p>
         </q-card>
@@ -60,6 +60,7 @@ export default {
 
 <style scoped>
   img {
+    display: inline;
     width: 128px;
     height: 128px;
   }
