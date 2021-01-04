@@ -1,8 +1,8 @@
 <!--TODO: set :arrows to "isMobile" once "isMobile" gets moved to Vuex-->
 
 <template>
-  <section id="why-us" class="q-pa-xl">
-    <p class="text-h3 text-primary text-center q-mt-xl q-py-xl">Dlaczego warto skorzystać z Podnóż</p>
+  <div id="why-us" class="q-pa-xl">
+    <p class="text-h3 text-primary text-center q-py-xl">Dlaczego warto skorzystać z Podnóż</p>
     <q-carousel
         v-model="slide"
         transition-prev="slide-left"
@@ -54,7 +54,7 @@
         </div>
       </q-carousel-slide>
     </q-carousel>
-  </section>
+  </div>
 </template>
 
 <script>
