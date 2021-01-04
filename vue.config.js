@@ -15,7 +15,8 @@ module.exports = {
   pluginOptions: {
     quasar: {
       importStrategy: 'kebab',
-      rtlSupport: true
+      rtlSupport: true,
+      cssAddon: true,
     }
   },
 

@@ -63,4 +63,6 @@ html {
 section {
     height: 100vh;
 }
+      padding: 0;
+
 </style>

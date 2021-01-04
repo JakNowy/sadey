@@ -89,7 +89,6 @@ html {
 .nav {
     color: var(--accent);
     padding: 0 16px 0;
-    transition: height ease 1s;
     border-bottom: 1px solid var(--primary)
 }
 

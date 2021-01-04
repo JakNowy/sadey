@@ -1,7 +1,7 @@
 <template>
     <Banner id="banner" class="row justify-center">
       <div slot="card"
-           class="slogan"
+           class="card"
       >
         <p
           slot="title"
@@ -20,7 +20,7 @@
 
         <div
           slot="buttons"
-          class="text-center"
+          class="text-center q-pb-lg-md"
           id="buttons"
         >
             <q-btn size="lg" class="bg-primary text-secondary q-mx-md">Zamów</q-btn>
@@ -60,11 +60,8 @@ export default {
   html {
     font-family: 'Montserrat', sans-serif;
   }
-  #title {
-    color: var(--primary); font-size: 100px; margin: 5% 0 0 0;
-  }
   #subtitle {
-    color: var(--primary); font-size: 28px; font-style: italic; margin: 0;
+    color: var(--primary); font-size: 72px; font-style: italic; margin: 0;
   }
   #buttons {
     color: var(--primary); font-size: 60px;
@@ -73,10 +70,9 @@ export default {
     background: url('../assets/background.jpg') no-repeat center;
     background-size: cover;
   }
-  .slogan {
+  .card {
     border: var(--primary) solid 3px;
-    width: 45%;
-    margin-top: 12%;
+    margin-top: 256px;
     padding: 64px;
     height: min-content;
   }
@@ -91,18 +87,17 @@ export default {
   }
 
   @media only screen and (max-width: 1366px) {
-    #title {
-      color: var(--primary); font-size: 72px; margin: 6% 0 0 0;
-    }
-    #subtitle {
-      color: var(--primary); font-size: 24px; font-style: italic; margin: 0;
+    .card {
+      margin-top: 184px;
     }
   }
 
   @media only screen and (max-width: 1023px) {
-    .slogan {
+    .card {
       width: 80%;
-      padding: 20px;
+      padding: 0;
+      padding-bottom: 16px;
+      margin-top: 64px;
     }
     #subtitle {
       font-size: 44px;

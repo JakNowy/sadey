@@ -1,5 +1,5 @@
 <template>
-  <div class="col-3-md q-pa-md">
+  <div class="col-md-3 text-center q-pa-md">
     <p>
       <strong>{{header}}</strong>
     </p>

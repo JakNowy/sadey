@@ -1,5 +1,7 @@
+<!--TODO: set :arrows to "isMobile" once "isMobile" gets moved to Vuex-->
+
 <template>
-  <div id="why-us" class="q-pa-xl">
+  <section id="why-us" class="q-pa-xl">
     <p class="text-h3 text-primary text-center q-mt-xl q-py-xl">Dlaczego warto skorzystać z Podnóż</p>
     <q-carousel
         v-model="slide"
@@ -8,52 +10,51 @@
         swipeable
         animated
         control-color="black"
-        padding
         infinite
         :autoplay="7000"
         @mouseenter="autoplay = true"
         @mouseleave="autoplay = false"
-        arrows
-        class="rounded-borders"
+        :arrows="true"
+        class="rounded-borders full-height"
     >
-      <q-carousel-slide name="1" class="column no-wrap flex-center slide">
-        <div class="q-mt-md text-center">
+      <q-carousel-slide name="1" class="column wrap flex-center carousel-slide">
+        <div class="q-mt-md text-center slide">
           <h4>{{ content.header["1"] }}</h4>
           <p v-html="content.text['1']"> </p>
         </div>
       </q-carousel-slide>
-      <q-carousel-slide name="2" class="column no-wrap flex-center slide">
-        <div class="q-mt-md text-center">
+      <q-carousel-slide name="2" class="column wrap flex-center carousel-slide">
+        <div class="q-mt-md text-center slide">
           <h4>{{ content.header["2"] }}</h4>
           <p v-html="content.text['2']"> </p>
         </div>
       </q-carousel-slide>
-      <q-carousel-slide name="3" class="column no-wrap flex-center slide">
-        <div class="q-mt-md text-center">
+      <q-carousel-slide name="3" class="column wrap flex-center carousel-slide">
+        <div class="q-mt-md text-center slide">
           <h4>{{ content.header["3"] }}</h4>
           <p v-html="content.text['3']"> </p>
         </div>
       </q-carousel-slide>
-      <q-carousel-slide name="4" class="column no-wrap flex-center slide">
-        <div class="q-mt-md text-center">
+      <q-carousel-slide name="4" class="column wrap flex-center carousel-slide">
+        <div class="q-mt-md text-center slide">
           <h4>{{ content.header["4"] }}</h4>
           <p v-html="content.text['4']"> </p>
         </div>
       </q-carousel-slide>
-      <q-carousel-slide name="5" class="column no-wrap flex-center slide">
-        <div class="q-mt-md text-center">
+      <q-carousel-slide name="5" class="column wrap flex-center carousel-slide">
+        <div class="q-mt-md text-center slide">
           <h4>{{ content.header["5"] }}</h4>
           <p v-html="content.text['5']"> </p>
         </div>
       </q-carousel-slide>
-      <q-carousel-slide name="6" class="column no-wrap flex-center slide">
-        <div class="q-mt-md text-center">
+      <q-carousel-slide name="6" class="column wrap flex-center carousel-slide">
+        <div class="q-mt-md text-center slide">
           <h4>{{ content.header["6"] }}</h4>
           <p v-html="content.text['6']"> </p>
         </div>
       </q-carousel-slide>
     </q-carousel>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -101,10 +102,26 @@ export default {
 </script>
 
 <style scoped>
-  .slide {
-    padding: 0 15% !important;
-    font-size: 20px;
-    line-height: 36px;
+/* TODO rewrite slides in loop. change element styling to class styling */
+  h2 {
   }
+  .carousel-slide {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+  .slide {
+    font-size: 28px;
+    padding: 0 5%;
+  }
+  @media only screen and (max-width: 1366px) {
+    .slide {
+      font-size: 20px;
+    }
+    #why-us {
+      padding: 0;
+    }
+  }
+
 </style>
 
