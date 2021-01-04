@@ -2,7 +2,7 @@
 
 <template>
   <div id="why-us" class="q-pa-xl">
-    <p class="text-h3 text-primary text-center q-py-xl">Dlaczego warto skorzystać z Podnóż</p>
+    <p class="text-h3 text-primary text-center q-py-xl why-heading">Dlaczego warto skorzystać z Podnóż</p>
     <q-carousel
         v-model="slide"
         transition-prev="slide-left"
@@ -103,8 +103,6 @@ export default {
 
 <style scoped>
 /* TODO rewrite slides in loop. change element styling to class styling */
-  h2 {
-  }
   .carousel-slide {
     padding: 0;
     margin: 0;
@@ -114,6 +112,9 @@ export default {
     font-size: 28px;
     padding: 0 5%;
   }
+  .why-heading {
+    padding-top: 128px;
+  }
   @media only screen and (max-width: 1366px) {
     .slide {
       font-size: 20px;
@@ -121,6 +122,12 @@ export default {
     #why-us {
       padding: 0;
     }
+  }
+  @media only screen and (max-width: 1023px) {
+    .why-heading {
+      padding-top: 0px;
+    }
+
   }
 
 </style>
